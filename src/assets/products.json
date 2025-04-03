@@ -10,7 +10,8 @@
       "name": "sweater",
       "price": "1",
       "category": "Clothing",
-      "description": "fashion, clothes , sweater, wool, cardigan,…"
+      "description": "fashion, clothes , sweater, wool, cardigan,…",
+      "image": "jacket.jpeg"
     },
     {
       "name": "tie",
@@ -114,18 +115,21 @@
       "name": "nivea pocket",
       "price": "7",
       "category": "services",
-      "description": ""
+      "description": "",
+      "image": "notebook.jpg"
     },
     {
       "name": "nivea pocket bleu",
       "price": "8",
       "category": "Catégorie",
-      "description": ""
+      "description": "",
+      "image": "clothing.jpg"
     },
     {
       "name": "chilli hot pizza",
       "price": "200",
       "category": "pizza",
-      "description": ""
+      "description": "",
+      "image": "computer_repair.jpeg"
     }
   ]

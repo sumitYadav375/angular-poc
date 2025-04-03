@@ -17,7 +17,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(37, 34, 34, 0.353);
+    background-color: rgba(37, 34, 34, 0.742);
     text-align: center;
     color:#ffff;
     gap: 4px;
@@ -35,4 +35,15 @@
 .item-description, .item-price {
     font-size:  14px;
     margin: 0;
+    opacity: 0;
+    transition: 0.5ms ease-in-out;
+}
+
+.item-content:hover .item-description {
+    opacity: 1;
+    transform-origin: top;
+}
+.item-content:hover  .item-price {
+    opacity: 1;
+    transform-origin: top;
 }

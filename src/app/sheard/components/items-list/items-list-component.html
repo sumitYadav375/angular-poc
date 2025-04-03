@@ -1,8 +1,8 @@
-<section class="item-list-wrapper">
+<section *ngFor="let product of products" class="item-list-wrapper">
     <app-item
-    name="sweater"
+    [name]="product.name"
     [price]="1"
-    description=""
-    image="assets/images/clothing.jpg"
+    [description]="product.description"
+    [image]="product.image"
  ></app-item>
 </section>
