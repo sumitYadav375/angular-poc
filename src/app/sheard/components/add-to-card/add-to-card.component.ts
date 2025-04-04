@@ -8,11 +8,12 @@ import { IProduct } from '../../../model/products.model';
 import { selectAddToCard } from '../../../store/addToCard/addToCard.selector';
 import { removeCartItem, updateCartItemQuantity } from '../../../store/addToCard/addToCard.action';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-add-to-card',
   standalone: true, 
-  imports: [FormsModule, CommonModule, ButtonComponent, CartItemComponent, NgFor, NgIf],
+  imports: [FormsModule, CommonModule, ButtonComponent, CartItemComponent, NgFor, NgIf, RouterModule],
   templateUrl: './add-to-card.component.html',
   styleUrl: './add-to-card.component.css'
 })
@@ -21,10 +22,11 @@ export class AddToCardComponent  {
   vatPercentage: number = 0; // Or default value like 5 for 5%
   discountAmount: number = 0;
   cardItems$: Observable<IProduct[]> = this.store.select(selectAddToCard);
-  
+  constructor(private router: Router) {}
   
   handleSubmit() {
     console.log('Submit button clicked!');
+    this.router.navigate(['/invoice']);
   }
 
   handleCancel() {

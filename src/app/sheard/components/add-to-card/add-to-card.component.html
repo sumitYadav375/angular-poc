@@ -35,14 +35,14 @@
             <span class="add-to-card-header">VAT Text</span>
             <div class="rupess-items">
                 <input type="text" [(ngModel)]="vatPercentage" placeholder="0">
-                <span>inr</span>
+                <span>INR</span>
             </div>
         </div>
         <div class="sub-total-item-box">
             <span class="add-to-card-header">Discount</span>
             <div class="rupess-items">
                 <input type="text" [(ngModel)]="discountAmount" placeholder="0">
-                <span>inr</span>
+                <span>INR</span>
             </div>
         </div>
         <div class="sub-total-item-box" *ngIf="cardItems$ | async as cardItems">

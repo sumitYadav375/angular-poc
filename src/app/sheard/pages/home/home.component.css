@@ -1,0 +1,26 @@
+.main-heading {
+    text-align: center;
+}
+.min-card-content {
+    display: flex;
+    gap: 10px;
+}
+.left-side-content {
+   width: 50%;
+   background-color:rgba(95, 158, 160, 0.082);
+   padding: 10px;
+}
+.right-side-content {
+    width: 50%;
+    background-color:rgba(95, 158, 160, 0.082);
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.app-items-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+}
