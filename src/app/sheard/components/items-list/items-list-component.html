@@ -1,9 +1,13 @@
-<section *ngFor="let product of products" class="item-list-wrapper">
-    <app-item
-    [name]="product.name"
-    [price]="product.price"
-    [description]="product.description"
-    [image]="product.image"
-    [quantity]="product.quantity"
- ></app-item>
+<section *ngIf="products$ | async as products" class="item-list-wrapper">
+        <app-item
+        *ngFor="let product of products"
+        [name]="product.name"
+        [price]="product.price"
+        [description]="product.description"
+        [image]="product.image"
+        [quantity]="product.quantity"
+        (click)="handleAddToCart(product)"
+        [disabled]="product.quantity === 0"
+     ></app-item>
 </section>
+

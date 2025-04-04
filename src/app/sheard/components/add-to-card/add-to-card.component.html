@@ -7,65 +7,56 @@
     </div>
 
     <div class="add-card-content">
-    <!-- <div class="not-item-crad">
-        <h3>THERE ARE NO PRODUCTS</h3>
-    </div> -->
+        <section *ngIf="cardItems$ | async as cardItems">
+            <ng-container *ngIf="cardItems.length > 0; else noItems">
+                <app-cart-item *ngFor="let item of cardItems; let i = index" [name]="item.name" [price]="item.price"
+                    [quantity]="item.quantity" (quantityChange)="updateQuantity(i, $event, item.id, item.quantity)"
+                    (deleteItem)="removeItem(i)"></app-cart-item>
+            </ng-container>
+        </section>
 
-    <app-cart-item
-  *ngFor="let item of cartItems; let i = index"
-  [name]="item.name"
-  [price]="item.price"
-  [quantity]="item.quantity"
-  (quantityChange)="updateQuantity(i, $event)"
-  (deleteItem)="removeItem(i)"
-></app-cart-item>
+        <ng-template #noItems>
+            <div class="not-item-crad">
+                <h3>THERE ARE NO PRODUCTS</h3>
+            </div>
+        </ng-template>
 
-</div>
+    </div>
 
     <div class="card-bottom">
         <div class="sub-total-item-box">
             <span class="add-to-card-header">Sub Total</span>
-            <div class="rupess-items">
-                <span>0.000INR</span>
-                <span>0 items</span>
+            <div class="rupess-items"  *ngIf="cardItems$ | async as cardItems">
+                <span>{{ getSubTotal(cardItems) | number:'1.2-2' }} INR</span>
+                <span>{{ getTotalItems(cardItems) }} items</span>
             </div>
         </div>
         <div class="sub-total-item-box">
             <span class="add-to-card-header">VAT Text</span>
             <div class="rupess-items">
-                <input type="text" placeholder="N/A">
+                <input type="text" [(ngModel)]="vatPercentage" placeholder="0">
                 <span>inr</span>
             </div>
         </div>
         <div class="sub-total-item-box">
             <span class="add-to-card-header">Discount</span>
             <div class="rupess-items">
-                <input type="text" placeholder="N/A">
+                <input type="text" [(ngModel)]="discountAmount" placeholder="0">
                 <span>inr</span>
             </div>
         </div>
-        <div class="sub-total-item-box">
+        <div class="sub-total-item-box" *ngIf="cardItems$ | async as cardItems">
             <span class="add-to-card-header">Total</span>
             <div class="rupess-items">
-                <span>0.000INR</span>
+                <span>{{ getTotal(getSubTotal(cardItems)) | number:'1.2-2' }} INR</span>
             </div>
         </div>
 
         <div class="button-group">
-        <app-button 
-          text="CANCEL SALE" 
-          bgColor="red" 
-          (btnClick)="handleCancel()"
-          class="custom-button"
-          >
-        </app-button>
-        <app-button
-        text="PROCESS SALE"
-        bgColor="green"
-        (btnClick)="handleSubmit()"
-        class="custom-button"
-        ></app-button>
-
+            <app-button text="CANCEL SALE" bgColor="red" (btnClick)="handleCancel()" class="custom-button">
+            </app-button>
+            <app-button text="PROCESS SALE" bgColor="green" (btnClick)="handleSubmit()"
+                class="custom-button"></app-button>
         </div>
     </div>
 </section>

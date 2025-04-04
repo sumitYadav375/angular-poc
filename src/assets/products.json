@@ -1,5 +1,6 @@
 [
     {
+      "id":1,
       "name": "comuter",
       "price": 10000,
       "category": "computers",
@@ -8,6 +9,7 @@
       "quantity": 10
     },
     {
+      "id":2,
       "name": "sweater",
       "price": 999,
       "category": "Clothing",
@@ -16,6 +18,7 @@
       "quantity": 10
     },
     {
+      "id":3,
       "name": "tie",
       "price": 150,
       "category": "Clothing",
@@ -24,6 +27,7 @@
       "quantity": 10
     },
     {
+      "id":4,
       "name": "jacket",
       "price": 1500,
       "category": "Clothing",
@@ -32,6 +36,7 @@
       "quantity": 10
     },
     {
+      "id":5,
       "name": "jacket men",
       "price": 2000,
       "category": "Clothing",
@@ -40,6 +45,7 @@
       "quantity": 10
     },
     {
+      "id":6,
       "name": "grapes",
       "price": 50,
       "category": "fruits",
@@ -48,6 +54,7 @@
       "quantity": 10
     },
     {
+      "id":7,
       "name": "strawberries",
       "price": 100,
       "category": "fruits",
@@ -56,6 +63,7 @@
       "quantity": 10
     },
     {
+      "id":8,
       "name": "kiwi",
       "price": 50,
       "category": "fruits",
@@ -64,6 +72,7 @@
       "quantity": 10
     },
     {
+      "id":9,
       "name": "mouse",
       "price": 180,
       "category": "computers",
@@ -72,6 +81,7 @@
       "quantity": 10
     },
     {
+      "id":10,
       "name": "keyboard",
       "price": 80,
       "category": "computers",
@@ -80,6 +90,7 @@
       "quantity": 10
     },
     {
+      "id":11,
       "name": "headphone",
       "price": 120,
       "category": "computers",
@@ -88,6 +99,7 @@
       "quantity": 10
     },
     {
+      "id":12,
       "name": "motherboard",
       "price": 170,
       "category": "computers",
@@ -96,6 +108,7 @@
       "quantity": 10
     },
     {
+      "id":13,
       "name": "notebook",
       "price": 760,
       "category": "computers",
@@ -104,6 +117,7 @@
       "quantity": 10
     },
     {
+      "id":14,
       "name": "computer repair",
       "price": 350,
       "category": "services",
@@ -112,6 +126,7 @@
       "quantity": 10
     },
     {
+      "id":15,
       "name": "gift folding",
       "price": 10,
       "category": "services",
@@ -120,6 +135,7 @@
       "quantity": 10
     },
     {
+      "id":16,
       "name": "Clothing",
       "price": 100,
       "category": "Clothing",
@@ -128,6 +144,7 @@
       "quantity": 10
     },
     {
+      "id":17,
       "name": "nivea pocket",
       "price": 70,
       "category": "services",
@@ -136,6 +153,7 @@
       "quantity": 10
     },
     {
+      "id":18,
       "name": "nivea pocket bleu",
       "price": 80,
       "category": "Catégorie",
@@ -144,6 +162,7 @@
       "quantity": 10
     },
     {
+      "id":19,
       "name": "chilli pizza",
       "price": 200,
       "category": "pizza",
