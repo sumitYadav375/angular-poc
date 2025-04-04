@@ -1,8 +1,9 @@
 <section *ngFor="let product of products" class="item-list-wrapper">
     <app-item
     [name]="product.name"
-    [price]="1"
+    [price]="product.price"
     [description]="product.description"
     [image]="product.image"
+    [quantity]="product.quantity"
  ></app-item>
 </section>

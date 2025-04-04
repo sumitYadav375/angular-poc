@@ -1,0 +1,54 @@
+.add-to-card {
+    padding: 20px;
+}
+.add-header {
+  display: flex;
+  justify-content: space-around;   
+  margin-bottom: 20px;
+}
+
+.not-item-crad {
+    padding: 30px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.add-card-content {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub-total-item-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.rupess-items {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    background-color: #fff;
+    padding: 6px;
+}
+.add-to-card-header {
+    background-color: rgba(128, 128, 128, 0.148);
+    width: 50%;
+    padding: 6px;
+}
+
+.button-group {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+}
+
+.custom-button {
+    width: 50%;
+}
+

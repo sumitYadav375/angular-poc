@@ -1,1 +1,71 @@
-<p>add-to-card works!</p>
+<section class="add-to-card">
+    <div class="add-header">
+        <span>PRODUCTS</span>
+        <span>PRICE</span>
+        <span>QUANTITY</span>
+        <span>TOTAL</span>
+    </div>
+
+    <div class="add-card-content">
+    <!-- <div class="not-item-crad">
+        <h3>THERE ARE NO PRODUCTS</h3>
+    </div> -->
+
+    <app-cart-item
+  *ngFor="let item of cartItems; let i = index"
+  [name]="item.name"
+  [price]="item.price"
+  [quantity]="item.quantity"
+  (quantityChange)="updateQuantity(i, $event)"
+  (deleteItem)="removeItem(i)"
+></app-cart-item>
+
+</div>
+
+    <div class="card-bottom">
+        <div class="sub-total-item-box">
+            <span class="add-to-card-header">Sub Total</span>
+            <div class="rupess-items">
+                <span>0.000INR</span>
+                <span>0 items</span>
+            </div>
+        </div>
+        <div class="sub-total-item-box">
+            <span class="add-to-card-header">VAT Text</span>
+            <div class="rupess-items">
+                <input type="text" placeholder="N/A">
+                <span>inr</span>
+            </div>
+        </div>
+        <div class="sub-total-item-box">
+            <span class="add-to-card-header">Discount</span>
+            <div class="rupess-items">
+                <input type="text" placeholder="N/A">
+                <span>inr</span>
+            </div>
+        </div>
+        <div class="sub-total-item-box">
+            <span class="add-to-card-header">Total</span>
+            <div class="rupess-items">
+                <span>0.000INR</span>
+            </div>
+        </div>
+
+        <div class="button-group">
+        <app-button 
+          text="CANCEL SALE" 
+          bgColor="red" 
+          (btnClick)="handleCancel()"
+          class="custom-button"
+          >
+        </app-button>
+        <app-button
+        text="PROCESS SALE"
+        bgColor="green"
+        (btnClick)="handleSubmit()"
+        class="custom-button"
+        ></app-button>
+
+        </div>
+    </div>
+</section>

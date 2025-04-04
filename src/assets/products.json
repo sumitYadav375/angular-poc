@@ -1,135 +1,154 @@
 [
     {
       "name": "comuter",
-      "price": "130",
+      "price": 10000,
       "category": "computers",
       "description": "",
-      "image": "comuter.jpg"
+      "image": "comuter.jpg",
+      "quantity": 10
     },
     {
       "name": "sweater",
-      "price": "1",
+      "price": 999,
       "category": "Clothing",
       "description": "fashion, clothes , sweater, wool, cardigan,…",
-      "image": "jacket.jpeg"
+      "image": "jacket.jpeg",
+      "quantity": 10
     },
     {
       "name": "tie",
-      "price": "46",
+      "price": 150,
       "category": "Clothing",
       "description": "fashion, tie, clothes, accessory , accessoire,…",
-      "image": "tie.jpeg"
+      "image": "tie.jpeg",
+      "quantity": 10
     },
     {
       "name": "jacket",
-      "price": "190",
+      "price": 1500,
       "category": "Clothing",
       "description": "winter  jacket ",
-      "image": "jacket.jpeg"
+      "image": "jacket.jpeg",
+      "quantity": 10
     },
     {
       "name": "jacket men",
-      "price": "225",
+      "price": 2000,
       "category": "Clothing",
       "description": "fashion  man  jacket ",
-      "image": "jacket_men.jpg"
+      "image": "jacket_men.jpg",
+      "quantity": 10
     },
     {
       "name": "grapes",
-      "price": "18",
+      "price": 50,
       "category": "fruits",
       "description": "food ,  leaf,  grape,s  wet,  green",
-      "image": "grapes.jpeg"
+      "image": "grapes.jpeg",
+      "quantity": 10
     },
     {
       "name": "strawberries",
-      "price": "15",
+      "price": 100,
       "category": "fruits",
       "description": "healthy  red sweet  strawberries",
-      "image": "strawberries.jpeg"
+      "image": "strawberries.jpeg",
+      "quantity": 10
     },
     {
       "name": "kiwi",
-      "price": "50",
+      "price": 50,
       "category": "fruits",
       "description": "fruit  kiwi ",
-      "image": "kiwi.jpeg"
+      "image": "kiwi.jpeg",
+      "quantity": 10
     },
     {
       "name": "mouse",
-      "price": "80",
+      "price": 180,
       "category": "computers",
       "description": "apple   mouse  ",
-      "image": "mouse.jpg"
+      "image": "mouse.jpg",
+      "quantity": 10
     },
     {
       "name": "keyboard",
-      "price": "80",
+      "price": 80,
       "category": "computers",
       "description": "apple mac  keyboard",
-      "image": "keyboard.jpg"
+      "image": "keyboard.jpg",
+      "quantity": 10
     },
     {
       "name": "headphone",
-      "price": "120",
+      "price": 120,
       "category": "computers",
       "description": "music headphone",
-      "image": "headphone.jpg"
+      "image": "headphone.jpg",
+      "quantity": 10
     },
     {
       "name": "motherboard",
-      "price": "179",
+      "price": 170,
       "category": "computers",
       "description": "pc motherboard with 16 Gb RAM",
-      "image": "motherboard.jpg"
+      "image": "motherboard.jpg",
+      "quantity": 10
     },
     {
       "name": "notebook",
-      "price": "760",
+      "price": 760,
       "category": "computers",
       "description": "macbook  notebook  computer",
-      "image": "notebook.jpg"
+      "image": "notebook.jpg",
+      "quantity": 10
     },
     {
       "name": "computer repair",
-      "price": "350",
+      "price": 350,
       "category": "services",
       "description": "standard computer repairing",
-      "image": "computer_repair.jpeg"
+      "image": "computer_repair.jpeg",
+      "quantity": 10
     },
     {
       "name": "gift folding",
-      "price": "7",
+      "price": 10,
       "category": "services",
       "description": "",
-      "image": "gift_folding.jpeg"
+      "image": "gift_folding.jpeg",
+      "quantity": 10
     },
     {
       "name": "Clothing",
-      "price": "100",
+      "price": 100,
       "category": "Clothing",
       "description": "",
-      "image": "clothing.jpg"
+      "image": "clothing.jpg",
+      "quantity": 10
     },
     {
       "name": "nivea pocket",
-      "price": "7",
+      "price": 70,
       "category": "services",
       "description": "",
-      "image": "notebook.jpg"
+      "image": "notebook.jpg",
+      "quantity": 10
     },
     {
       "name": "nivea pocket bleu",
-      "price": "8",
+      "price": 80,
       "category": "Catégorie",
       "description": "",
-      "image": "clothing.jpg"
+      "image": "clothing.jpg",
+      "quantity": 10
     },
     {
-      "name": "chilli hot pizza",
-      "price": "200",
+      "name": "chilli pizza",
+      "price": 200,
       "category": "pizza",
       "description": "",
-      "image": "computer_repair.jpeg"
+      "image": "computer_repair.jpeg",
+      "quantity": 10
     }
   ]

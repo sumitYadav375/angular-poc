@@ -1,0 +1,17 @@
+<div class="cart-item">
+    <span class="delete-icon" (click)="removeItem()">🗑</span>
+  
+    <span class="details">
+      <span class="name">{{ name }}</span>
+      <span class="price">Price: ₹{{ price }}</span>
+  
+      <div class="quantity">
+        <button (click)="decreaseQty()" [disabled]="quantity <= 1">-</button>
+        <input type="number" [value]="quantity" readonly />
+        <button (click)="increaseQty()">+</button>
+      </div>
+  
+      <span class="total">{{ total }} INR</span>
+    </span>
+  </div>
+  

@@ -6,8 +6,8 @@
     overflow: hidden;
 }
 .item-image {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
 }
 
@@ -23,20 +23,22 @@
     gap: 4px;
     display: flex;
     flex-direction: column;
-    padding: 4px;
     cursor: pointer;
 }
 
 .item-name {
-    font-size: 16px;
+    font-size: 12px;
     margin: 0;
+    text-transform: uppercase;
+    padding: 4px;
 }
 
 .item-description, .item-price {
-    font-size:  14px;
+    font-size:  10px;
     margin: 0;
     opacity: 0;
-    transition: 0.5ms ease-in-out;
+    transition: 0.5s ease-in-out;
+    text-transform: uppercase;
 }
 
 .item-content:hover .item-description {

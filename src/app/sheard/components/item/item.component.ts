@@ -12,4 +12,5 @@ export class ItemComponent {
     @Input() price: number = 0;
     @Input() description: string = '';
     @Input() image: string = '';
+    @Input() quantity: number = 0;
 }
