@@ -1,11 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CartItemComponent } from '../cart-item/cart-item.component';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../../model/products.model';
-import { selectAddToCard } from '../../../store/addToCard/addToCard.selector';
+import { selectAddToCard, selectAddToCardState } from '../../../store/addToCard/addToCard.selector';
 import { removeCartItem, setCartTotals, updateCartItemQuantity } from '../../../store/addToCard/addToCard.action';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
@@ -17,12 +17,19 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './add-to-card.component.html',
   styleUrl: './add-to-card.component.css'
 })
-export class AddToCardComponent  {
+export class AddToCardComponent implements OnInit {
   private store = inject(Store)
   vatPercentage: number = 0; // Or default value like 5 for 5%
   discountAmount: number = 0;
   cardItems$: Observable<IProduct[]> = this.store.select(selectAddToCard);
   constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.store.select(selectAddToCardState).subscribe((meta) => {
+      this.vatPercentage = meta.vat;
+      this.discountAmount = meta.discount
+    })
+  }
   
   handleSubmit() {
     this.cardItems$.subscribe(items => {
