@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { IProduct } from "../../model/products.model";
-import { addToCart, removeCartItem, setCartTotals, updateCartItemQuantity } from "./addToCard.action";
+import { addToCart, clearCart, removeCartItem, setCartTotals, updateCartItemQuantity } from "./addToCard.action";
 
 export interface AddToCardState {
   items: IProduct[];
@@ -64,5 +64,16 @@ export const AddToCardReducer = createReducer(
     vat,
     discount,
     total
+  })),
+
+  on(clearCart, (state) => ({
+    ...state,
+    items: [],
+    cartItems: [],
+    subTotal: 0,
+    vat: 0,
+    discount: 0,
+    total: 0
   }))
+  
 );

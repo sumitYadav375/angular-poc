@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../../model/products.model';
 import { selectAddToCard, selectAddToCardState } from '../../../store/addToCard/addToCard.selector';
-import { removeCartItem, setCartTotals, updateCartItemQuantity } from '../../../store/addToCard/addToCard.action';
+import { clearCart, removeCartItem, setCartTotals, updateCartItemQuantity } from '../../../store/addToCard/addToCard.action';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
@@ -49,7 +49,7 @@ export class AddToCardComponent implements OnInit {
     }).unsubscribe();
   }
   handleCancel() {
-    console.log('Cancel button clicked!');
+    this.store.dispatch(clearCart());
   }
 
   updateQuantity(index: number, newQuantity: number, productId: number, prevQuantity: number) {

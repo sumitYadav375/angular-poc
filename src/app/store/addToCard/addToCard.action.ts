@@ -25,3 +25,7 @@ export const setCartTotals = createAction(
         total: number;
     }>()
 );
+
+export const clearCart = createAction(
+    '[Cart] Clear Cart'
+)
