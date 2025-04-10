@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../../model/products.model';
 import { selectAddToCard } from '../../../store/addToCard/addToCard.selector';
-import { removeCartItem, updateCartItemQuantity } from '../../../store/addToCard/addToCard.action';
+import { removeCartItem, setCartTotals, updateCartItemQuantity } from '../../../store/addToCard/addToCard.action';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
@@ -25,10 +25,22 @@ export class AddToCardComponent  {
   constructor(private router: Router) {}
   
   handleSubmit() {
-    console.log('Submit button clicked!');
-    this.router.navigate(['/invoice']);
+    this.cardItems$.subscribe(items => {
+      const subTotal = this.getSubTotal(items);
+      const vat = this.vatPercentage;
+      const discount = isNaN(this.discountAmount) ? 0 : this.discountAmount;
+      const total = subTotal + this.getVATAmount(subTotal) -  this.getDiscountAmount(subTotal, discount);
+  
+      this.store.dispatch(setCartTotals({
+        subTotal,
+        vat,
+        discount,
+        total
+      }));
+  
+      this.router.navigate(['/invoice']);
+    }).unsubscribe();
   }
-
   handleCancel() {
     console.log('Cancel button clicked!');
   }
@@ -56,6 +68,14 @@ export class AddToCardComponent  {
 
   getVATAmount(subTotal: number): number {
     return (subTotal * this.vatPercentage) / 100;
+  }
+  getDiscountAmount(subTotal: number, discount: number) {
+    console.log("subTotal", subTotal, "discount", discount);
+    const discountAmount =  ( subTotal * discount ) / 100;
+    const getTotal = this.getVATAmount(subTotal);
+    
+    return getTotal - discountAmount;
+     
   }
   
   getTotal(subTotal: number): number {

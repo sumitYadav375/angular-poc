@@ -1,13 +1,22 @@
 import { createReducer, on } from "@ngrx/store";
 import { IProduct } from "../../model/products.model";
-import { addToCart, removeCartItem, updateCartItemQuantity } from "./addToCard.action";
+import { addToCart, removeCartItem, setCartTotals, updateCartItemQuantity } from "./addToCard.action";
 
 export interface AddToCardState {
   items: IProduct[];
+  subTotal: number;
+  vat: number;
+  discount: number;
+  total: number;
+
 }
 
 const initialState: AddToCardState = {
   items: [],
+  subTotal: 0,
+  vat: 0,
+  discount: 0,
+  total: 0,
 };
 
 export const AddToCardReducer = createReducer(
@@ -47,5 +56,13 @@ export const AddToCardReducer = createReducer(
   on(removeCartItem, (state, { index }) => ({
     ...state,
     items: state.items.filter((_, i) => i !== index)
+  })),
+
+  on(setCartTotals, (state, { subTotal, vat, discount, total}) => ({
+    ...state,
+    subTotal,
+    vat,
+    discount,
+    total
   }))
 );

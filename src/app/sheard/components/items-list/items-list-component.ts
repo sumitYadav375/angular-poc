@@ -27,7 +27,7 @@ export class ItemsListComponent implements OnInit {
 
     handleAddToCart(product: IProduct) {
       if (product.quantity === 0) return;
-        this.store.dispatch(addToCart({ product }));
+         this.store.dispatch(addToCart({ product }));
         this.store.dispatch(decrementProductQuantity({ productId: product.id }));
       }
 }

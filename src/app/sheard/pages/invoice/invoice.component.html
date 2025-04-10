@@ -1,1 +1,42 @@
-<p>invoice works!</p>
+<h2 class="invoice-heading">Invoice Page</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Sub Total</th>
+    </tr>
+  </thead>
+
+  <tbody *ngIf="cartState$ | async as cartState">
+    <tr *ngFor="let item of cartState.items; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.price * item.quantity }} INR</td>
+    </tr>
+  </tbody>
+
+  <tfoot *ngIf="cartState$ | async as cartState">
+    <tr>
+      <td colspan="2"><strong>Total Items</strong></td>
+      <td>{{ getTotalQuantity(cartState.items) }} Total</td>
+      <td>{{ cartState.subTotal }} INR</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><strong>Discount</strong></td>
+      <td>{{ cartState.discount / 100 | percent:'1.0-0' }} </td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><strong>VAT</strong></td>
+      <td>{{ cartState.vat / 100 | percent: '1.0-0' }} </td>
+    </tr>
+  </tfoot>
+</table>
+<ng-template #noItems>
+  <p>No items in the cart.</p>
+</ng-template>

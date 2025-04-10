@@ -15,3 +15,13 @@ export const removeCartItem = createAction(
     '[Cart] Remove Cart item',
     props<{index:number}>()
 )
+
+export const setCartTotals = createAction(
+    '[Cart] Set Cart Totals',
+    props<{
+        subTotal: number;
+        vat: number;
+        discount: number;
+        total: number;
+    }>()
+);

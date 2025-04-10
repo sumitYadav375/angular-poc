@@ -9,6 +9,8 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { productsReducer } from './store/products/products.reducer';
 import { loadProductsEffect } from './store/products/products.effects';
 import { AddToCardReducer } from './store/addToCard/addToCard.reducer';
+import { pipe } from 'rxjs';
+import { CustomPipPipe } from './pipe/custom-pip.pipe';
 
 export const appConfig: ApplicationConfig = {
   providers: [

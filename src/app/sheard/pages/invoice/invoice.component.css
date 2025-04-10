@@ -1,0 +1,35 @@
+.invoice-heading {
+    text-align: center;
+}
+
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+  }
+  
+  thead {
+    background-color: #f0f0f0;
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    font-weight: 600;
+    color: #444;
+  }
+  
+  td {
+    color: #555;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
