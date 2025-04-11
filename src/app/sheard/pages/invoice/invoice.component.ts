@@ -9,7 +9,7 @@ import { CustomPipPipe } from '../../../pipe/custom-pip.pipe';
 
 @Component({
   selector: 'app-invoice',
-  imports: [FormsModule, CommonModule,  NgFor, NgIf, CustomPipPipe],
+  imports: [FormsModule, CommonModule,  NgFor, NgIf],
   templateUrl: './invoice.component.html',
   styleUrl: './invoice.component.css'
 })

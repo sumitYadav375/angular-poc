@@ -1,0 +1,58 @@
+<h1>planday Table!</h1>
+
+<table>
+    <thead>
+        <th>
+          <input type="checkbox" />
+        </th>
+        <th>
+            Planday Departments
+        </th>
+        <th>
+            Zenegy Departments
+        </th>
+        <th>
+            Status
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of plandayDatas; let i = index">
+            <td class="relative" style="position: relative;">
+                <div>
+                    <input type="checkbox" />
+                    <span class="icon-button" (click)="toggleDropdown(i)">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            style="margin-left: 6px;"
+                        >
+                            <circle cx="12" cy="12" r="10" fill="#000" />
+                            <polygon points="10,8 16,12 10,16" fill="#fff" />
+                        </svg>
+                    </span>
+                    <div class="dropdown-menu"  *ngIf="dropdownOpen[i]">
+                        <button (click)="selectOption(i, 'Transfer')">Transfer</button>
+                        <button (click)="selectOption(i, 'Skip')">Skip</button>
+                      </div>
+                </div>
+            </td>
+            <td>{{ item.PDepartments }}</td>
+            <td>{{ item.ZDepartments }}</td>
+            <td>
+                <span class="status-badge"
+                [ngClass]="{
+                    'transfer-badge': item.status === 'Transfer',
+                    'skip-badge': item.status === 'Skip',
+                    'undefined-badge': item.status !== 'Transfer' && item.status !== 'Skip'
+                  }"
+                >
+                {{ item.status || 'Undefined' }}
+               </span>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
