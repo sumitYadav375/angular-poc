@@ -2,15 +2,15 @@ import { CommonModule, NgIf } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { PlandayService } from '../../../services/planday.service';
 import { IPlanday } from '../../../model/planday.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-planday',
-  imports: [CommonModule, NgIf],
+  imports: [CommonModule, NgIf, FormsModule],
   templateUrl: './planday.component.html',
   styleUrl: './planday.component.css'
 })
 export class PlandayComponent implements OnInit {
-  isDropdownOpen = false;
   selectedStatus: string = 'Transfer';
   plandayDatas: IPlanday[] = [];
   dropdownOpen: { [key: number]: boolean } = {};
@@ -42,5 +42,14 @@ export class PlandayComponent implements OnInit {
       });
     }
   }
+
+  availableDepartments: string[] = [
+    'HR',
+    'Engineering',
+    'Finance',
+    'Marketing',
+    'Sales'
+  ];
+  
 
 }

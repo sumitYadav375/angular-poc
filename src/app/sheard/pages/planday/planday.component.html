@@ -40,7 +40,14 @@
                 </div>
             </td>
             <td>{{ item.PDepartments }}</td>
-            <td>{{ item.ZDepartments }}</td>
+            <td>
+                <select [(ngModel)]="item.ZDepartments" class="text-like-select">
+                    <option value="select Department" disabled>{{item.ZDepartments}}</option>
+                    <option *ngFor="let dept of availableDepartments" [value]="dept">
+                      {{ dept }}
+                    </option>
+                  </select>                
+            </td>
             <td>
                 <span class="status-badge"
                 [ngClass]="{
